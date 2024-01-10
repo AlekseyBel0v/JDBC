@@ -1,10 +1,9 @@
-package com.belov.jdbc;
+package com.belov.jdbc.config;
 
-import com.belov.jdbc.repositories.Repository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.belov.jdbc.repository.ProductRepository;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,12 +11,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
 
-@org.springframework.context.annotation.Configuration
-public class Configuration {
+@Configuration
+public class ProductConfiguration {
 
     @Bean
-    Repository repository() {
-        return new Repository(read("search_by_name.sql"));
+    ProductRepository repository() {
+        return new ProductRepository(read("search_by_name.sql"));
     }
 
     private static String read(String scriptFileName) {

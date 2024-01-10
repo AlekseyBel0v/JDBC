@@ -1,21 +1,20 @@
-package com.belov.jdbc.repositories;
+package com.belov.jdbc.repository;
 
-import com.belov.jdbc.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-//@org.springframework.stereotype.Repository
-public class Repository {
+//@Repository
+public class ProductRepository {
 
     private String searchByName;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public Repository(String searchByName) {
+    public ProductRepository(String searchByName) {
         this.searchByName = searchByName;
     }
 
